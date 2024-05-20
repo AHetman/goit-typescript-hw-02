@@ -8,14 +8,14 @@ import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "../ImageModal/ImageModal";
 
 const App = () => {
-  const [photos, setPhotos] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [page, setPage] = useState(1);
-  const [query, setQuery] = useState("");
+  const [photos, setPhotos] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
+  const [selectedImage, setSelectedImage] = useState<any>(null);
+  const [page, setPage] = useState<number>(1);
+  const [query, setQuery] = useState<string>("");
 
-  const handleSubmit = (topic) => {
+  const handleSubmit = (topic: string) => {
     setQuery(topic);
     setPage(1);
     setPhotos([]);
@@ -47,7 +47,7 @@ const App = () => {
     getPhotos();
   }, [query, page]);
 
-  const openModal = (imageUrl) => {
+  const openModal = (imageUrl: string) => {
     setSelectedImage(imageUrl);
   };
 
