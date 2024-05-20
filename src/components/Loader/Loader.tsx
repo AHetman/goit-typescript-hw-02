@@ -1,20 +1,19 @@
-// import React from "react";
-import { InfinitySpin } from "react-loader-spinner";
+import { Hourglass } from "react-loader-spinner";
 import css from "./Loader.module.css";
 
-interface LoaderProps {
-  loading: boolean;
-}
-
-const Loader: React.FC<LoaderProps> = ({ loading }) => {
+const Loader = ({ loading }: { loading: boolean }) => {
   return (
-    <InfinitySpin
-      visible={loading}
-      width={String(200)}
-      color="#4fa94d"
-      ariaLabel="infinity-spin-loading"
-    />
+    <div className={css.loader}>
+      <Hourglass
+        height="80"
+        width="80"
+        colors={["#4fa94d", "#64f62f"]}
+        ariaLabel="hourglass-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+        visible={loading}
+      />
+    </div>
   );
 };
-
 export default Loader;

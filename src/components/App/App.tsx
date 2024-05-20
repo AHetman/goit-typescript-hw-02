@@ -62,7 +62,7 @@ const App = () => {
       {photos.length > 0 && (
         <ImageGallery images={photos} onImageClick={openModal} />
       )}
-      {isLoading && <Loader />}
+      {isLoading && <Loader loading={isLoading} />}
       {photos.length > 9 && !isLoading && (
         <LoadMoreBtn onClick={handleLoadMore} />
       )}
