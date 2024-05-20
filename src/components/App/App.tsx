@@ -7,11 +7,29 @@ import Loader from "../Loader/Loader";
 import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "../ImageModal/ImageModal";
 
+interface Image {
+  id: string;
+  created_at: string;
+  updated_at: string;
+  width: number;
+  height: number;
+  color: string;
+  description: string;
+  alt_description: string;
+  urls: {
+    raw: string;
+    full: string;
+    regular: string;
+    small: string;
+    thumb: string;
+  };
+}
+
 const App = () => {
-  const [photos, setPhotos] = useState<any[]>([]);
+  const [photos, setPhotos] = useState<Image[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
-  const [selectedImage, setSelectedImage] = useState<any>(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [page, setPage] = useState<number>(1);
   const [query, setQuery] = useState<string>("");
 
