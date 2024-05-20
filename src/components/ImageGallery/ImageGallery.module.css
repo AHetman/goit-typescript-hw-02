@@ -1,0 +1,11 @@
+.imageGallery {
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  list-style: none;
+}
+
+.imageGalleryItem {
+  max-width: calc(20% - 12px);
+}

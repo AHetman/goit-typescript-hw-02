@@ -1,0 +1,10 @@
+.imageCard {
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.oneImage {
+  display: block;
+  width: calc((100vw - 88px) / 5);
+  height: 220px;
+  object-fit: cover;
+}
